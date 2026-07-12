@@ -17,7 +17,7 @@ Este repositorio contiene el código fuente de la plataforma web de Nuvex System
 ## 🛠️ Tecnologías Utilizadas
 * **HTML5** - Estructura semántica de la web.
 * **CSS3** - Estilos, diseño responsivo y animaciones.
-* *(Agrega aquí JS u otras tecnologías si las usaste, por ejemplo: JavaScript / Bootstrap / Tailwind)*
+* **JS** - Estructura interactiva personalizable
 
 ---
 
