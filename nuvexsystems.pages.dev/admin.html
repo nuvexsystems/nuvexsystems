@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Mirrored from nuvexsystems.pages.dev/admin by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 12 Jul 2026 01:47:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Admin — Nuvex Systems</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="https://nuvexsystems.pages.dev/admin.css" />
+  <link rel="icon" type="image/webp" href="https://instagram.fgye5-2.fna.fbcdn.net/v/t51.82787-15/724838757_18123809509590885_3140993157944274830_n.webp?_nc_cat=107&amp;ig_cache_key=MzkyMTE2OTQ2MjYxMzkwMDkxOQ%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&amp;_nc_ohc=Z-ccls1HQQIQ7kNvwHIA5sd&amp;_nc_oc=AdpIYMnhKntOScOE2dB8kUHT6vCX4v14PaBnX3iENvYxHRXDbiOU5SzHE1cUFR913EJaO_UEYrJDl3qqCPHnf1Zg&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;_nc_ht=instagram.fgye5-2.fna&amp;_nc_gid=dATF-qkNDVTFFGXOLjuC7w&amp;_nc_ss=7a22e&amp;oh=00_AQD1NhcAjojCCVPvRrtS4OGt8VGX0qdCYzymLZgySyhLGg&amp;oe=6A51CF50" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ===================== LOGIN SCREEN ===================== -->
+  <div class="login-screen" id="login-screen">
+    <div class="login-bg"></div>
+    <div class="login-grid"></div>
+
+    <div class="login-card">
+      <div class="login-header">
+        <img
+          class="login-logo"
+          src="https://instagram.fgye5-2.fna.fbcdn.net/v/t51.82787-15/724838757_18123809509590885_3140993157944274830_n.webp?_nc_cat=107&amp;ig_cache_key=MzkyMTE2OTQ2MjYxMzkwMDkxOQ%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&amp;_nc_ohc=Z-ccls1HQQIQ7kNvwHIA5sd&amp;_nc_oc=AdpIYMnhKntOScOE2dB8kUHT6vCX4v14PaBnX3iENvYxHRXDbiOU5SzHE1cUFR913EJaO_UEYrJDl3qqCPHnf1Zg&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;_nc_ht=instagram.fgye5-2.fna&amp;_nc_gid=dATF-qkNDVTFFGXOLjuC7w&amp;_nc_ss=7a22e&amp;oh=00_AQD1NhcAjojCCVPvRrtS4OGt8VGX0qdCYzymLZgySyhLGg&amp;oe=6A51CF50"
+          alt="Nuvex Systems Logo"
+          onerror="this.src='https://placehold.co/72x72/6C63FF/fff?text=N'"
+        />
+        <div class="login-title">Panel de Administración</div>
+        <div class="login-subtitle">Acceso exclusivo — Nuvex Systems</div>
+      </div>
+
+      <div class="login-lock-icon">🔐</div>
+
+      <div class="login-error" id="login-error">
+        <i class="fa-solid fa-circle-xmark"></i>
+        <span id="login-error-text">Contraseña incorrecta. Intenta de nuevo.</span>
+      </div>
+
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="login-user">Usuario</label>
+          <input
+            type="text"
+            id="login-user"
+            class="form-input"
+            placeholder="admin"
+            value="admin"
+            readonly
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="login-password">Contraseña</label>
+          <div class="form-input-wrapper">
+            <input
+              type="password"
+              id="login-password"
+              class="form-input password-input"
+              placeholder="Ingresa tu contraseña"
+              autocomplete="current-password"
+              required
+            />
+            <button type="button" class="password-toggle" id="password-toggle" aria-label="Mostrar contraseña">
+              <i class="fa-regular fa-eye" id="password-icon"></i>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-login" id="login-btn">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          Iniciar sesión
+        </button>
+      </form>
+
+      <p class="login-hint">
+        🔒 Acceso privado. Solo el administrador puede ingresar.
+      </p>
+
+      <a href="https://nuvexsystems.pages.dev/index.html" class="login-back">
+        <i class="fa-solid fa-arrow-left"></i>
+        Volver al sitio público
+      </a>
+    </div>
+  </div>
+
+  <!-- ===================== ADMIN DASHBOARD ===================== -->
+  <div class="admin-layout" id="admin-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <img
+          class="sidebar-logo"
+          src="https://instagram.fgye5-2.fna.fbcdn.net/v/t51.82787-15/724838757_18123809509590885_3140993157944274830_n.webp?_nc_cat=107&amp;ig_cache_key=MzkyMTE2OTQ2MjYxMzkwMDkxOQ%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&amp;_nc_ohc=Z-ccls1HQQIQ7kNvwHIA5sd&amp;_nc_oc=AdpIYMnhKntOScOE2dB8kUHT6vCX4v14PaBnX3iENvYxHRXDbiOU5SzHE1cUFR913EJaO_UEYrJDl3qqCPHnf1Zg&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;_nc_ht=instagram.fgye5-2.fna&amp;_nc_gid=dATF-qkNDVTFFGXOLjuC7w&amp;_nc_ss=7a22e&amp;oh=00_AQD1NhcAjojCCVPvRrtS4OGt8VGX0qdCYzymLZgySyhLGg&amp;oe=6A51CF50"
+          alt="Nuvex Systems"
+          onerror="this.src='https://placehold.co/44x44/6C63FF/fff?text=N'"
+        />
+        <div>
+          <div class="sidebar-brand">Nuvex Systems</div>
+          <div class="sidebar-version">Admin v1.0</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-section-label">Principal</div>
+
+        <div class="nav-item active" data-panel="dashboard" id="nav-dashboard">
+          <span class="nav-item-icon">📊</span>
+          Dashboard
+        </div>
+
+        <div class="nav-item" data-panel="new-project" id="nav-new-project">
+          <span class="nav-item-icon">➕</span>
+          Nuevo Proyecto
+        </div>
+
+        <div class="nav-item" data-panel="projects" id="nav-projects">
+          <span class="nav-item-icon">🗂️</span>
+          Mis Proyectos
+          <span class="nav-badge" id="nav-projects-count">0</span>
+        </div>
+
+        <div class="sidebar-section-label">Más</div>
+
+        <a href="https://nuvexsystems.pages.dev/index.html" target="_blank" class="nav-item" id="nav-view-site">
+          <span class="nav-item-icon">🌐</span>
+          Ver Sitio Público
+        </a>
+
+        <div class="nav-item" data-panel="settings" id="nav-settings">
+          <span class="nav-item-icon">⚙️</span>
+          Configuración
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <div class="sidebar-user-avatar">NS</div>
+          <div>
+            <div class="sidebar-user-name">Administrador</div>
+            <div class="sidebar-user-role">Nuvex Systems</div>
+          </div>
+        </div>
+        <button class="btn-logout" id="logout-btn">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          Cerrar sesión
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="admin-main">
+      <div class="admin-topbar">
+        <div>
+          <div class="topbar-title" id="topbar-title">Dashboard</div>
+          <div class="topbar-subtitle" id="topbar-subtitle">Bienvenido al panel de administración de Nuvex Systems</div>
+        </div>
+        <div class="topbar-actions">
+          <a href="https://nuvexsystems.pages.dev/index.html" target="_blank" class="topbar-btn topbar-btn-secondary" id="topbar-view-site">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            Ver sitio
+          </a>
+          <button class="topbar-btn topbar-btn-primary" id="topbar-new-project" onclick="switchPanel('new-project')">
+            <i class="fa-solid fa-plus"></i>
+            Nuevo proyecto
+          </button>
+        </div>
+      </div>
+
+      <div class="admin-content">
+
+        <!-- ===== DASHBOARD PANEL ===== -->
+        <div class="admin-panel active" id="panel-dashboard">
+
+          <!-- Stats -->
+          <div class="stats-grid">
+            <div class="stat-card stat-card-1">
+              <div class="stat-icon stat-icon-1">🗂️</div>
+              <div class="stat-value" id="stat-total">0</div>
+              <div class="stat-label">Proyectos publicados</div>
+            </div>
+            <div class="stat-card stat-card-2">
+              <div class="stat-icon stat-icon-2">🛒</div>
+              <div class="stat-value" id="stat-ecommerce">0</div>
+              <div class="stat-label">E-Commerce</div>
+            </div>
+            <div class="stat-card stat-card-3">
+              <div class="stat-icon stat-icon-3">🎨</div>
+              <div class="stat-value" id="stat-web">0</div>
+              <div class="stat-label">Sitios Web</div>
+            </div>
+            <div class="stat-card stat-card-4">
+              <div class="stat-icon stat-icon-4">🚀</div>
+              <div class="stat-value" id="stat-landing">0</div>
+              <div class="stat-label">Landing Pages</div>
+            </div>
+          </div>
+
+          <!-- Recent projects -->
+          <div>
+            <div class="projects-header">
+              <div>
+                <div class="projects-title">Proyectos recientes</div>
+                <div class="projects-count" id="dashboard-count">0 proyectos publicados</div>
+              </div>
+              <button class="topbar-btn topbar-btn-primary" onclick="switchPanel('new-project')" id="dashboard-add-btn">
+                <i class="fa-solid fa-plus"></i>
+                Agregar proyecto
+              </button>
+            </div>
+            <div class="projects-table-wrapper" id="dashboard-table-wrapper">
+              <table class="projects-table" id="dashboard-table">
+                <thead>
+                  <tr>
+                    <th>Imagen</th>
+                    <th>Proyecto</th>
+                    <th>Categoría</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="dashboard-table-body">
+                  <!-- Dinámico -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== NEW PROJECT PANEL ===== -->
+        <div class="admin-panel" id="panel-new-project">
+
+          <div class="form-card">
+            <div class="form-card-header">
+              <div class="form-card-icon">✨</div>
+              <div>
+                <div class="form-card-title" id="project-form-title">Publicar nuevo proyecto</div>
+                <div class="form-card-subtitle">Completa la información para mostrar el proyecto en el portafolio público</div>
+              </div>
+            </div>
+
+            <form id="project-form" novalidate>
+              <input type="hidden" id="project-id" value="" />
+
+              <div class="admin-form-grid">
+
+                <div class="form-group">
+                  <label class="admin-label" for="p-title">Nombre del proyecto *</label>
+                  <input type="text" id="p-title" class="admin-input" placeholder="Ej: Tienda Online BoutiqueXY" required />
+                </div>
+
+                <div class="form-group">
+                  <label class="admin-label" for="p-category">Categoría *</label>
+                  <select id="p-category" class="admin-select" required>
+                    <option value="">Selecciona una categoría</option>
+                    <option value="web">Sitio Web</option>
+                    <option value="ecommerce">E-Commerce</option>
+                    <option value="landing">Landing Page</option>
+                    <option value="app">Aplicación Web</option>
+                  </select>
+                </div>
+
+                <div class="form-group form-group-full">
+                  <label class="admin-label" for="p-description">Descripción del proyecto *</label>
+                  <textarea id="p-description" class="admin-textarea" placeholder="Describe brevemente el proyecto, lo que se hizo, tecnologías utilizadas y el resultado obtenido..." required></textarea>
+                </div>
+
+                <div class="form-group form-group-full">
+                  <label class="admin-label" for="p-image">URL de la imagen (portada) *</label>
+                  <input
+                    type="url"
+                    id="p-image"
+                    class="admin-input"
+                    placeholder="https://ejemplo.com/imagen.jpg"
+                    required
+                  />
+                  <div class="image-preview" id="image-preview">
+                    <div class="image-preview-placeholder">
+                      <span class="preview-icon">🖼️</span>
+                      <p>La vista previa aparecerá aquí</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="admin-label" for="p-url">URL del proyecto (opcional)</label>
+                  <input type="url" id="p-url" class="admin-input" placeholder="https://miproyecto.com/" />
+                </div>
+
+                <div class="form-group">
+                  <label class="admin-label">Tecnologías / Tags *</label>
+                  <div class="tags-input-wrapper" id="tags-wrapper">
+                    <!-- tags chips here -->
+                    <input
+                      type="text"
+                      class="tags-input"
+                      id="tags-input"
+                      placeholder="Escribe y presiona Enter..."
+                    />
+                  </div>
+                  <input type="hidden" id="p-tags" />
+                </div>
+
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn-admin btn-admin-secondary" id="form-cancel-btn">
+                  <i class="fa-solid fa-xmark"></i>
+                  Cancelar
+                </button>
+                <button type="submit" class="btn-admin btn-admin-primary" id="form-submit-btn">
+                  <i class="fa-solid fa-rocket"></i>
+                  Publicar proyecto
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- ===== PROJECTS PANEL ===== -->
+        <div class="admin-panel" id="panel-projects">
+
+          <div class="projects-header" style="margin-bottom:20px;">
+            <div>
+              <div class="projects-title">Todos los proyectos</div>
+              <div class="projects-count" id="projects-count-label">0 proyectos</div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;">
+              <input type="text" class="search-input" id="search-projects" placeholder="🔍 Buscar proyecto..." />
+              <button class="topbar-btn topbar-btn-primary" onclick="switchPanel('new-project')" id="projects-add-btn">
+                <i class="fa-solid fa-plus"></i>
+                Agregar
+              </button>
+            </div>
+          </div>
+
+          <div class="projects-table-wrapper">
+            <table class="projects-table">
+              <thead>
+                <tr>
+                  <th>Imagen</th>
+                  <th>Proyecto</th>
+                  <th>Categoría</th>
+                  <th>Tags</th>
+                  <th>Fecha</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="projects-table-body">
+                <!-- Dinámico -->
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+        <!-- ===== SETTINGS PANEL ===== -->
+        <div class="admin-panel" id="panel-settings">
+
+          <div class="settings-grid">
+
+            <div class="setting-card">
+              <div class="setting-card-title">🔑 Cambiar contraseña</div>
+              <div class="setting-card-desc">Actualiza la contraseña de acceso al panel de administración.</div>
+
+              <form id="change-password-form" novalidate>
+                <div class="form-group" style="margin-bottom:16px;">
+                  <label class="admin-label" for="current-password">Contraseña actual</label>
+                  <input type="password" id="current-password" class="admin-input" placeholder="••••••••" />
+                </div>
+                <div class="form-group" style="margin-bottom:8px;">
+                  <label class="admin-label" for="new-password">Nueva contraseña</label>
+                  <input type="password" id="new-password" class="admin-input" placeholder="••••••••" id="new-password" />
+                  <div class="strength-bar">
+                    <div class="strength-fill" id="password-strength-bar" style="width:0;"></div>
+                  </div>
+                  <div id="password-strength-label" style="font-size:0.75rem;color:var(--text-muted);margin-top:4px;"></div>
+                </div>
+                <div class="form-group" style="margin-bottom:20px;">
+                  <label class="admin-label" for="confirm-password">Confirmar contraseña</label>
+                  <input type="password" id="confirm-password" class="admin-input" placeholder="••••••••" />
+                </div>
+                <button type="submit" class="btn-admin btn-admin-primary">
+                  <i class="fa-solid fa-key"></i>
+                  Actualizar contraseña
+                </button>
+              </form>
+            </div>
+
+            <div class="setting-card">
+              <div class="setting-card-title">ℹ️ Información del panel</div>
+              <div class="setting-card-desc">Detalles sobre esta instalación del panel de Nuvex Systems.</div>
+
+              <div style="display:flex;flex-direction:column;gap:14px;margin-top:8px;">
+                <div style="display:flex;justify-content:space-between;padding:12px;background:rgba(255,255,255,0.03);border:1px solid var(--border-color);border-radius:var(--radius-md);">
+                  <span style="font-size:0.85rem;color:var(--text-muted);">Versión</span>
+                  <span style="font-size:0.85rem;font-weight:600;">v1.0.0</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:12px;background:rgba(255,255,255,0.03);border:1px solid var(--border-color);border-radius:var(--radius-md);">
+                  <span style="font-size:0.85rem;color:var(--text-muted);">Almacenamiento</span>
+                  <span style="font-size:0.85rem;font-weight:600;">localStorage</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:12px;background:rgba(255,255,255,0.03);border:1px solid var(--border-color);border-radius:var(--radius-md);">
+                  <span style="font-size:0.85rem;color:var(--text-muted);">Empresa</span>
+                  <span style="font-size:0.85rem;font-weight:600;">Nuvex Systems</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:12px;background:rgba(255,255,255,0.03);border:1px solid var(--border-color);border-radius:var(--radius-md);">
+                  <span style="font-size:0.85rem;color:var(--text-muted);">Instagram</span>
+                  <a href="https://www.instagram.com/nuvex.systems/" target="_blank" style="font-size:0.85rem;font-weight:600;color:var(--color-primary);">@nuvex.systems</a>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:12px;background:rgba(255,255,255,0.03);border:1px solid var(--border-color);border-radius:var(--radius-md);">
+                  <span style="font-size:0.85rem;color:var(--text-muted);">Proyectos</span>
+                  <span class="stat-value" id="settings-projects-count" style="font-size:0.85rem;font-weight:600;">0</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="setting-card danger-zone">
+              <div class="setting-card-title">⚠️ Zona de peligro</div>
+              <div class="setting-card-desc">Estas acciones son irreversibles. Procede con cuidado.</div>
+              <button class="btn-admin btn-admin-danger" id="delete-all-btn">
+                <i class="fa-solid fa-trash"></i>
+                Eliminar todos los proyectos
+              </button>
+            </div>
+
+            <div class="setting-card">
+              <div class="setting-card-title">💾 Backup & Restore</div>
+              <div class="setting-card-desc">Exporta o importa tus proyectos en formato JSON.</div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                <button class="btn-admin btn-admin-primary" id="export-btn">
+                  <i class="fa-solid fa-download"></i>
+                  Exportar JSON
+                </button>
+                <button class="btn-admin btn-admin-secondary" id="import-btn">
+                  <i class="fa-solid fa-upload"></i>
+                  Importar JSON
+                </button>
+                <input type="file" id="import-file" accept=".json" style="display:none;" />
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ===================== DELETE CONFIRM MODAL ===================== -->
+  <div class="modal-overlay" id="delete-modal">
+    <div class="modal">
+      <div class="modal-icon modal-icon-danger">🗑️</div>
+      <h2 class="modal-title">¿Eliminar proyecto?</h2>
+      <p class="modal-desc">
+        Esta acción no se puede deshacer. El proyecto será eliminado permanentemente del portafolio.
+      </p>
+      <div class="modal-actions">
+        <button class="btn-admin btn-admin-secondary" id="delete-cancel-btn">Cancelar</button>
+        <button class="btn-admin btn-admin-danger" id="delete-confirm-btn">
+          <i class="fa-solid fa-trash"></i>
+          Sí, eliminar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== DELETE ALL MODAL ===================== -->
+  <div class="modal-overlay" id="delete-all-modal">
+    <div class="modal">
+      <div class="modal-icon modal-icon-danger">⚠️</div>
+      <h2 class="modal-title">¿Eliminar TODOS los proyectos?</h2>
+      <p class="modal-desc">
+        Esta acción eliminará permanentemente <strong>todos los proyectos</strong> del portafolio. Esta acción es irreversible.
+      </p>
+      <div class="modal-actions">
+        <button class="btn-admin btn-admin-secondary" id="delete-all-cancel-btn">Cancelar</button>
+        <button class="btn-admin btn-admin-danger" id="delete-all-confirm-btn">
+          <i class="fa-solid fa-trash"></i>
+          Eliminar todo
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="https://nuvexsystems.pages.dev/admin.js"></script>
+</body>
+
+<!-- Mirrored from nuvexsystems.pages.dev/admin by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 12 Jul 2026 01:47:25 GMT -->
+</html>
